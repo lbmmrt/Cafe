@@ -14,6 +14,7 @@
 		32D3A89423CE1D8B00D8492A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A89223CE1D8B00D8492A /* LaunchScreen.storyboard */; };
 		32D3A89F23CE1D8C00D8492A /* CafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A89E23CE1D8C00D8492A /* CafeTests.swift */; };
 		32D3A8AA23CE1D8C00D8492A /* CafeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A8A923CE1D8C00D8492A /* CafeUITests.swift */; };
+		32D3A8B823CE22DF00D8492A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A8B723CE22DF00D8492A /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		32D3A8A523CE1D8C00D8492A /* CafeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CafeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D3A8A923CE1D8C00D8492A /* CafeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeUITests.swift; sourceTree = "<group>"; };
 		32D3A8AB23CE1D8C00D8492A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32D3A8B723CE22DF00D8492A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		32D3A87D23CE1D8900D8492A = {
 			isa = PBXGroup;
 			children = (
+				32D3A8B723CE22DF00D8492A /* .gitignore */,
 				32D3A88823CE1D8900D8492A /* Cafe */,
 				32D3A89D23CE1D8C00D8492A /* CafeTests */,
 				32D3A8A823CE1D8C00D8492A /* CafeUITests */,
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32D3A8B823CE22DF00D8492A /* .gitignore in Resources */,
 				32D3A89423CE1D8B00D8492A /* LaunchScreen.storyboard in Resources */,
 				32D3A89123CE1D8B00D8492A /* Assets.xcassets in Resources */,
 				32D3A88F23CE1D8900D8492A /* Main.storyboard in Resources */,
