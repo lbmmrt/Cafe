@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rg0-eh-mAg">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,13 +18,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Tmz-y6-Xm0">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Tmz-y6-Xm0" customClass="CafeTableViewCell" customModule="Cafe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tmz-y6-Xm0" id="ZNv-lf-IYg">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mOx-hM-P4L">
+                                            <rect key="frame" x="15" y="9.6666666666666643" width="70" height="70.666666666666686"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="rft-cc-Oyy"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uuC-Z9-7v4">
+                                            <rect key="frame" x="95" y="14" width="300" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="16Q-KJ-tfs"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="21"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nh-is-QiO">
+                                            <rect key="frame" x="95" y="56" width="300" height="20"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZn-jS-wJG">
+                                            <rect key="frame" x="95" y="35" width="300" height="20"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="uuC-Z9-7v4" firstAttribute="trailing" secondItem="pZn-jS-wJG" secondAttribute="trailing" id="6vC-bE-OzD"/>
+                                        <constraint firstItem="uuC-Z9-7v4" firstAttribute="leading" secondItem="7nh-is-QiO" secondAttribute="leading" id="AI3-R9-f7R"/>
+                                        <constraint firstItem="7nh-is-QiO" firstAttribute="top" secondItem="uuC-Z9-7v4" secondAttribute="bottom" constant="21" id="BDO-zZ-45l"/>
+                                        <constraint firstItem="mOx-hM-P4L" firstAttribute="centerY" secondItem="pZn-jS-wJG" secondAttribute="centerY" id="HoS-xY-b8R"/>
+                                        <constraint firstItem="mOx-hM-P4L" firstAttribute="centerY" secondItem="ZNv-lf-IYg" secondAttribute="centerY" id="R5b-Lc-3iP"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uuC-Z9-7v4" secondAttribute="trailing" constant="-1" id="TFp-On-sxF"/>
+                                        <constraint firstItem="uuC-Z9-7v4" firstAttribute="leading" secondItem="mOx-hM-P4L" secondAttribute="trailing" constant="10" id="Vh9-nw-WDF"/>
+                                        <constraint firstItem="mOx-hM-P4L" firstAttribute="leading" secondItem="ZNv-lf-IYg" secondAttribute="leading" constant="15" id="Y9A-Ps-Zse"/>
+                                        <constraint firstItem="uuC-Z9-7v4" firstAttribute="leading" secondItem="pZn-jS-wJG" secondAttribute="leading" id="ke8-X1-BZf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="7nh-is-QiO" secondAttribute="bottom" constant="3" id="m4T-ft-2nb"/>
+                                        <constraint firstItem="uuC-Z9-7v4" firstAttribute="trailing" secondItem="7nh-is-QiO" secondAttribute="trailing" id="rgb-0l-aqG"/>
+                                        <constraint firstAttribute="bottom" secondItem="mOx-hM-P4L" secondAttribute="bottom" constant="9.5" id="vOg-u8-sWC"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageCafe" destination="mOx-hM-P4L" id="7yQ-jA-Vkk"/>
+                                    <outlet property="locationLabel" destination="pZn-jS-wJG" id="jTJ-ge-uIe"/>
+                                    <outlet property="nameLebel" destination="uuC-Z9-7v4" id="ZqE-x9-dgd"/>
+                                    <outlet property="typeLabel" destination="7nh-is-QiO" id="i82-lH-Rea"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
