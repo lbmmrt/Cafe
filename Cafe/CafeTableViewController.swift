@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EateriesTableViewController: UITableViewController {
+class CafeTableViewController: UITableViewController {
     
     let restaurantNames = ["Ogonёk Grill&Bar", "Елу", "Bonsai", "Дастархан", "Индокитай", "X.O", "Балкан Гриль", "Respublica", "Speak Easy", "Morris Pub", "Вкусные истории", "Классик", "Love&Life", "Шок", "Бочка"]
     
