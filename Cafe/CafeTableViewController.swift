@@ -41,7 +41,7 @@ class CafeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CafeTableViewCell
         
         cell.imageCafe.image = UIImage(named: restaurantImages[indexPath.row])
-        cell.imageCafe.layer.cornerRadius = 37.8
+        cell.imageCafe.layer.cornerRadius = 37.5
         cell.imageCafe.clipsToBounds = true
         cell.nameLebel.text = restaurantNames[indexPath.row]
         
