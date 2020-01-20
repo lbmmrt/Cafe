@@ -10,9 +10,9 @@ import UIKit
 
 class CafeTableViewController: UITableViewController {
     
-    let cafeNames = ["Ogonёk Grill&Bar", "Елу", "Bonsai", "Дастархан", "Индокитай", "X.O", "Балкан Гриль", "Respublica", "Speak Easy", "Morris Pub", "Вкусные истории", "Классик", "Love&Life", "Шок", "Бочка"]
+    var cafeNames = ["Ogonёk Grill&Bar", "Елу", "Bonsai", "Дастархан", "Индокитай", "X.O", "Балкан Гриль", "Respublica", "Speak Easy", "Morris Pub", "Вкусные истории", "Классик", "Love&Life", "Шок", "Бочка"]
     
-    let cafeImages = ["ogonek.jpg", "elu.jpg", "bonsai.jpg", "dastarhan.jpg", "indokitay.jpg", "x.o.jpg", "balkan.jpg", "respublika.jpg", "speakeasy.jpg", "morris.jpg", "istorii.jpg", "klassik.jpg", "love.jpg", "shok.jpg", "bochka.jpg"]
+    var cafeImages = ["ogonek.jpg", "elu.jpg", "bonsai.jpg", "dastarhan.jpg", "indokitay.jpg", "x.o.jpg", "balkan.jpg", "respublika.jpg", "speakeasy.jpg", "morris.jpg", "istorii.jpg", "klassik.jpg", "love.jpg", "shok.jpg", "bochka.jpg"]
     
     var cafeIsVisited = [Bool] (repeating: false, count: 15)
     
@@ -88,4 +88,37 @@ class CafeTableViewController: UITableViewController {
         }
     }
  
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//
+//        if editingStyle == .delete {
+//            cafeImages.remove(at: indexPath.row)
+//            cafeNames.remove(at: indexPath.row)
+//            cafeIsVisited.remove(at: indexPath.row)
+//        }
+//        tableView.deleteRows(at: [indexPath], with: .fade)
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let share = UITableViewRowAction(style: .default, title: "Поделиться") { (action, indexPath) in
+            let defaultText = "Я сейчас в " + self.cafeNames[indexPath.row]
+            if let image = UIImage(named: self.cafeImages[indexPath.row]) {
+                let activityController = UIActivityViewController(activityItems: [defaultText, image], applicationActivities: nil)
+                self.present(activityController, animated: true, completion: nil)
+            }
+        }
+    
+        let delete = UITableViewRowAction(style: .default, title: "Удалить") { (action, indexPath) in
+            self.cafeImages.remove(at: indexPath.row)
+            self.cafeNames.remove(at: indexPath.row)
+            self.cafeIsVisited.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        
+        
+        share.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        delete.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        return [delete, share]
+}
+    
+    
 }
