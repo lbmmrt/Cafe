@@ -132,7 +132,7 @@ class CafeTableViewController: UITableViewController {
         if segue.identifier == "detaliSegue" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let dvc = segue.destination as! CafeDeteilViewController
-                dvc.imageName = self.cafe[indexPath.row].image
+                dvc.cafe = self.cafe[indexPath.row]
             
         }
     }

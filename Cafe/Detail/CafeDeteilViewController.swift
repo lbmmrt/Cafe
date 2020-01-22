@@ -13,14 +13,13 @@ class CafeDeteilViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    var cafe: Cafe?
     
-    
-    var imageName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        imageView.image = UIImage(named: imageName)
+        imageView.image = UIImage(named: cafe!.image)
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,9 +37,26 @@ class CafeDeteilViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CafeDetailTableViewCell
         
-        cell.keyLabel.text = "some key text"
-        cell.valueLabel.text = "some key text"
+//        cell.keyLabel.text = "some key text"
+//        cell.valueLabel.text = "some key text"
 
+        switch indexPath.row {
+        case 0:
+            cell.keyLabel.text = "Название"
+            cell.valueLabel.text = cafe!.name
+        case 1:
+            cell.keyLabel.text = "Тип"
+            cell.valueLabel.text = cafe!.type
+        case 2:
+            cell.keyLabel.text = "Адрес"
+            cell.valueLabel.text = cafe!.location
+        case 3:
+            cell.keyLabel.text = "Я здесь был?"
+            cell.valueLabel.text = cafe!.isVisited ? "Да" : "Нет"
+        default:
+            break
+        }
+        
         return cell
     }
     
