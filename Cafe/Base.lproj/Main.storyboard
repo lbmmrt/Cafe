@@ -172,7 +172,7 @@
         <!--Navigation Controller-->
         <scene sceneID="hqm-JN-6l9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vzN-22-3Lh" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="vzN-22-3Lh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sm6-UP-rox">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
