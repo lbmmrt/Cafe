@@ -10,6 +10,7 @@
 		3234CE7823D5FEC500C50996 /* CafeDeteilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7723D5FEC500C50996 /* CafeDeteilViewController.swift */; };
 		3234CE7A23D60E3F00C50996 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7923D60E3F00C50996 /* Cafe.swift */; };
 		3234CE7C23D7556200C50996 /* CafeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7B23D7556200C50996 /* CafeDetailTableViewCell.swift */; };
+		3234CE7F23DF4A9400C50996 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7E23DF4A9400C50996 /* RateViewController.swift */; };
 		32D3A88A23CE1D8900D8492A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A88923CE1D8900D8492A /* AppDelegate.swift */; };
 		32D3A88F23CE1D8900D8492A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A88D23CE1D8900D8492A /* Main.storyboard */; };
 		32D3A89123CE1D8B00D8492A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A89023CE1D8B00D8492A /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		3234CE7723D5FEC500C50996 /* CafeDeteilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDeteilViewController.swift; sourceTree = "<group>"; };
 		3234CE7923D60E3F00C50996 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
 		3234CE7B23D7556200C50996 /* CafeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailTableViewCell.swift; sourceTree = "<group>"; };
+		3234CE7E23DF4A9400C50996 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		32D3A88623CE1D8900D8492A /* Cafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D3A88923CE1D8900D8492A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D3A88E23CE1D8900D8492A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,9 +124,10 @@
 				32D3A8BD23D0C62200D8492A /* CafeTableViewCell.swift */,
 				3234CE7D23D7558C00C50996 /* Detail */,
 				3234CE7923D60E3F00C50996 /* Cafe.swift */,
-				32D3A89023CE1D8B00D8492A /* Assets.xcassets */,
+				3234CE7E23DF4A9400C50996 /* RateViewController.swift */,
 				32D3A88D23CE1D8900D8492A /* Main.storyboard */,
 				32D3A89223CE1D8B00D8492A /* LaunchScreen.storyboard */,
+				32D3A89023CE1D8B00D8492A /* Assets.xcassets */,
 				32D3A89523CE1D8B00D8492A /* Info.plist */,
 			);
 			path = Cafe;
@@ -286,6 +289,7 @@
 				3234CE7823D5FEC500C50996 /* CafeDeteilViewController.swift in Sources */,
 				3234CE7A23D60E3F00C50996 /* Cafe.swift in Sources */,
 				32D3A88A23CE1D8900D8492A /* AppDelegate.swift in Sources */,
+				3234CE7F23DF4A9400C50996 /* RateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
