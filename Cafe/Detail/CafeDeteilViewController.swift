@@ -13,7 +13,12 @@ class CafeDeteilViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var rateButton: UIButton!
     var cafe: Cafe?
+    
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.hidesBarsOnSwipe = false
@@ -22,6 +27,12 @@ class CafeDeteilViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rateButton.layer.cornerRadius = 5
+        rateButton.layer.borderWidth = 1
+        rateButton.layer.borderColor = UIColor.white.cgColor
+        tableView.estimatedRowHeight = 40
+        tableView.rowHeight = UITableView.automaticDimension
         
         imageView.image = UIImage(named: cafe!.image)
         

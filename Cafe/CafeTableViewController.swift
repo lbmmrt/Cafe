@@ -11,7 +11,7 @@ import UIKit
 class CafeTableViewController: UITableViewController {
     
     var cafe: [Cafe] = [
-        Cafe(name: "Ogonёk Grill&Bar", type: "ресторан-бар", location: "Москва", image: "ogonek.jpg", isVisited: false),
+        Cafe(name: "Ogonёk Grill&Bar", type: "ресторан-бар", location: "Москва, Комсомольская площаль 5", image: "ogonek.jpg", isVisited: false),
         Cafe(name: "Елу", type: "ресторан", location: "Москва", image: "elu.jpg", isVisited: false),
         Cafe(name: "Bonsai", type: "ресторан", location: "Уфа", image: "bonsai.jpg", isVisited: false),
         Cafe(name: "Дастархан", type: "ресторан", location: "Уфа", image: "dastarhan.jpg", isVisited: false),
@@ -59,6 +59,8 @@ class CafeTableViewController: UITableViewController {
         cell.imageCafe.layer.cornerRadius = 40
         cell.imageCafe.clipsToBounds = true
         cell.nameLebel.text = cafe[indexPath.row].name
+        cell.locationLabel.text = cafe[indexPath.row].location
+        cell.typeLabel.text = cafe[indexPath.row].type
         
         if self.cafe[indexPath.row].isVisited {
             cell.accessoryType = .checkmark
