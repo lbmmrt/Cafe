@@ -27,6 +27,9 @@ class CafeTableViewController: UITableViewController {
         Cafe(name: "Шок", type: "ресторан", location: "Уфа", image: "shok.jpg", isVisited: false),
         Cafe(name: "Бочка", type: "ресторан", location:  "Уфа", image: "bochka.jpg", isVisited: false)]
     
+    @IBAction func close(segue: UIStoryboardSegue) {
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.hidesBarsOnSwipe = true
