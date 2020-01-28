@@ -10,14 +10,16 @@ import UIKit
 
 class CafeDeteilViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
+    @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var rateButton: UIButton!
     var cafe: Cafe?
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
-        
+        guard let svc = segue.source as? RateViewController else { return }
+        guard let rating = svc.cafeRating else { return }
+        rateButton.setImage(UIImage(named: rating), for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,11 +30,16 @@ class CafeDeteilViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        mapButton.layer.cornerRadius = 5
+        mapButton.layer.borderWidth = 1
+        mapButton.layer.borderColor = UIColor.white.cgColor
         rateButton.layer.cornerRadius = 5
         rateButton.layer.borderWidth = 1
         rateButton.layer.borderColor = UIColor.white.cgColor
         tableView.estimatedRowHeight = 40
         tableView.rowHeight = UITableView.automaticDimension
+       
         
         imageView.image = UIImage(named: cafe!.image)
         
@@ -84,5 +91,14 @@ class CafeDeteilViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mapSegue" {
+           let dvc = segue.destination as! MapViewController
+            dvc.cafe = self.cafe
+        }
+    }
+    
     
 }

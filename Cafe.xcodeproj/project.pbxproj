@@ -11,6 +11,8 @@
 		3234CE7A23D60E3F00C50996 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7923D60E3F00C50996 /* Cafe.swift */; };
 		3234CE7C23D7556200C50996 /* CafeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7B23D7556200C50996 /* CafeDetailTableViewCell.swift */; };
 		3234CE7F23DF4A9400C50996 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7E23DF4A9400C50996 /* RateViewController.swift */; };
+		3234CE8123E090BC00C50996 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE8023E090BC00C50996 /* MapViewController.swift */; };
+		3234CE8423E091AF00C50996 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3234CE8323E091AF00C50996 /* MapKit.framework */; };
 		32D3A88A23CE1D8900D8492A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A88923CE1D8900D8492A /* AppDelegate.swift */; };
 		32D3A88F23CE1D8900D8492A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A88D23CE1D8900D8492A /* Main.storyboard */; };
 		32D3A89123CE1D8B00D8492A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A89023CE1D8B00D8492A /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		3234CE7923D60E3F00C50996 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
 		3234CE7B23D7556200C50996 /* CafeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3234CE7E23DF4A9400C50996 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
+		3234CE8023E090BC00C50996 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3234CE8323E091AF00C50996 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		32D3A88623CE1D8900D8492A /* Cafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D3A88923CE1D8900D8492A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D3A88E23CE1D8900D8492A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3234CE8423E091AF00C50996 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +100,14 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		3234CE8223E091AF00C50996 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3234CE8323E091AF00C50996 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		32D3A87D23CE1D8900D8492A = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +116,7 @@
 				32D3A89D23CE1D8C00D8492A /* CafeTests */,
 				32D3A8A823CE1D8C00D8492A /* CafeUITests */,
 				32D3A88723CE1D8900D8492A /* Products */,
+				3234CE8223E091AF00C50996 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +140,7 @@
 				3234CE7923D60E3F00C50996 /* Cafe.swift */,
 				3234CE7E23DF4A9400C50996 /* RateViewController.swift */,
 				32D3A88D23CE1D8900D8492A /* Main.storyboard */,
+				3234CE8023E090BC00C50996 /* MapViewController.swift */,
 				32D3A89223CE1D8B00D8492A /* LaunchScreen.storyboard */,
 				32D3A89023CE1D8B00D8492A /* Assets.xcassets */,
 				32D3A89523CE1D8B00D8492A /* Info.plist */,
@@ -219,6 +234,11 @@
 				TargetAttributes = {
 					32D3A88523CE1D8900D8492A = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					32D3A89923CE1D8C00D8492A = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -290,6 +310,7 @@
 				3234CE7A23D60E3F00C50996 /* Cafe.swift in Sources */,
 				32D3A88A23CE1D8900D8492A /* AppDelegate.swift in Sources */,
 				3234CE7F23DF4A9400C50996 /* RateViewController.swift in Sources */,
+				3234CE8123E090BC00C50996 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

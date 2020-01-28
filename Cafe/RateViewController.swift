@@ -15,7 +15,19 @@ class RateViewController: UIViewController {
     @IBOutlet weak var badButton: UIButton!
     @IBOutlet weak var goodButton: UIButton!
     @IBOutlet weak var briliantBotton: UIButton!
+    var cafeRating: String?
     
+    @IBAction func rateCafe(sender: UIButton) {
+        switch sender.tag {
+        case 0: cafeRating = "bad"
+        case 1: cafeRating = "good"
+        case 2: cafeRating = "brilliant"
+        default: break
+        }
+        
+        performSegue(withIdentifier: "unwindSegueToDVC", sender: sender)
+        
+    }
     
     override func viewDidAppear(_ animated: Bool) {
 //        UIView.animate(withDuration: 0.4) {
