@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3207F6F923E2042A00F9BE76 /* NewCafeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3207F6F823E2042A00F9BE76 /* NewCafeTableViewController.swift */; };
 		3234CE7823D5FEC500C50996 /* CafeDeteilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7723D5FEC500C50996 /* CafeDeteilViewController.swift */; };
 		3234CE7A23D60E3F00C50996 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7923D60E3F00C50996 /* Cafe.swift */; };
 		3234CE7C23D7556200C50996 /* CafeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7B23D7556200C50996 /* CafeDetailTableViewCell.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3207F6F823E2042A00F9BE76 /* NewCafeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCafeTableViewController.swift; sourceTree = "<group>"; };
 		3234CE7723D5FEC500C50996 /* CafeDeteilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDeteilViewController.swift; sourceTree = "<group>"; };
 		3234CE7923D60E3F00C50996 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
 		3234CE7B23D7556200C50996 /* CafeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				3234CE7923D60E3F00C50996 /* Cafe.swift */,
 				3234CE7E23DF4A9400C50996 /* RateViewController.swift */,
 				32D3A88D23CE1D8900D8492A /* Main.storyboard */,
+				3207F6F823E2042A00F9BE76 /* NewCafeTableViewController.swift */,
 				3234CE8023E090BC00C50996 /* MapViewController.swift */,
 				32D3A89223CE1D8B00D8492A /* LaunchScreen.storyboard */,
 				32D3A89023CE1D8B00D8492A /* Assets.xcassets */,
@@ -307,6 +310,7 @@
 				3234CE7C23D7556200C50996 /* CafeDetailTableViewCell.swift in Sources */,
 				32D3A8BC23CF9A8600D8492A /* CafeTableViewController.swift in Sources */,
 				3234CE7823D5FEC500C50996 /* CafeDeteilViewController.swift in Sources */,
+				3207F6F923E2042A00F9BE76 /* NewCafeTableViewController.swift in Sources */,
 				3234CE7A23D60E3F00C50996 /* Cafe.swift in Sources */,
 				32D3A88A23CE1D8900D8492A /* AppDelegate.swift in Sources */,
 				3234CE7F23DF4A9400C50996 /* RateViewController.swift in Sources */,
