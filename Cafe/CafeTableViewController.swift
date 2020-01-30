@@ -75,7 +75,7 @@ class CafeTableViewController: UITableViewController {
     }
     
     
-    //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     //
     //        let ac = UIAlertController(title: nil, message: "Выберите дейсвие", preferredStyle: .actionSheet)
     //        let call = UIAlertAction(title: "Позвонить: 8 (999) 666-11\(indexPath.row)", style: .default) {
@@ -101,7 +101,7 @@ class CafeTableViewController: UITableViewController {
     //        ac.addAction(isVisied)
     //        present(ac, animated: true, completion: nil)
     //
-    //        tableView.deselectRow(at: indexPath, animated: true)
+            tableView.deselectRow(at: indexPath, animated: true)
     //
     //        func showAlert() {
     //            let cancelCall = UIAlertController(title: nil, message: "Вызов невозможен", preferredStyle: .alert)
@@ -109,7 +109,7 @@ class CafeTableViewController: UITableViewController {
     //            cancelCall.addAction(ok)
     //            present(cancelCall, animated: true, completion: nil)
     
-    //        }
+            }
     
     
     //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
