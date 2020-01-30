@@ -295,6 +295,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="kxt-bk-vhL" id="iPw-2p-BCb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMX-yX-7F4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ZwS-BZ-Z86" userLabel="Exit" sceneMemberID="exit"/>

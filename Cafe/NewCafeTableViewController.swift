@@ -8,13 +8,21 @@
 
 import UIKit
 
-class NewCafeTableViewController: UITableViewController {
+class NewCafeTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imageView.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        dismiss(animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -47,6 +55,7 @@ class NewCafeTableViewController: UITableViewController {
     func chooseImagePickerAction(source: UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(source) {
             let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
             imagePicker.allowsEditing = true
             imagePicker.sourceType = source
             self.present(imagePicker, animated: true, completion: nil)
