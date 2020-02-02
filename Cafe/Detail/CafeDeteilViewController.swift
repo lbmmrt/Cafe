@@ -41,7 +41,7 @@ class CafeDeteilViewController: UIViewController, UITableViewDataSource, UITable
         tableView.rowHeight = UITableView.automaticDimension
        
         
-        imageView.image = UIImage(named: cafe!.image)
+        imageView.image = UIImage(data: cafe!.image! as Data)
         
 //        tableView.backgroundColor = #colorLiteral(red: 1, green: 0.7400522134, blue: 0.6560359941, alpha: 1)
 //        tableView.separatorColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)

@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		3207F6F923E2042A00F9BE76 /* NewCafeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3207F6F823E2042A00F9BE76 /* NewCafeTableViewController.swift */; };
 		3234CE7823D5FEC500C50996 /* CafeDeteilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7723D5FEC500C50996 /* CafeDeteilViewController.swift */; };
-		3234CE7A23D60E3F00C50996 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7923D60E3F00C50996 /* Cafe.swift */; };
 		3234CE7C23D7556200C50996 /* CafeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7B23D7556200C50996 /* CafeDetailTableViewCell.swift */; };
 		3234CE7F23DF4A9400C50996 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7E23DF4A9400C50996 /* RateViewController.swift */; };
 		3234CE8123E090BC00C50996 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE8023E090BC00C50996 /* MapViewController.swift */; };
 		3234CE8423E091AF00C50996 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3234CE8323E091AF00C50996 /* MapKit.framework */; };
+		32599E9323E70A140024AAE6 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32599E9223E70A140024AAE6 /* CoreDataStack.swift */; };
+		32599E9623E70B740024AAE6 /* Cafe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32599E9423E70B740024AAE6 /* Cafe.xcdatamodeld */; };
 		32D3A88A23CE1D8900D8492A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D3A88923CE1D8900D8492A /* AppDelegate.swift */; };
 		32D3A88F23CE1D8900D8492A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A88D23CE1D8900D8492A /* Main.storyboard */; };
 		32D3A89123CE1D8B00D8492A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D3A89023CE1D8B00D8492A /* Assets.xcassets */; };
@@ -45,11 +46,12 @@
 /* Begin PBXFileReference section */
 		3207F6F823E2042A00F9BE76 /* NewCafeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCafeTableViewController.swift; sourceTree = "<group>"; };
 		3234CE7723D5FEC500C50996 /* CafeDeteilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDeteilViewController.swift; sourceTree = "<group>"; };
-		3234CE7923D60E3F00C50996 /* Cafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
 		3234CE7B23D7556200C50996 /* CafeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3234CE7E23DF4A9400C50996 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		3234CE8023E090BC00C50996 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3234CE8323E091AF00C50996 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		32599E9223E70A140024AAE6 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		32599E9523E70B740024AAE6 /* Cafe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cafe.xcdatamodel; sourceTree = "<group>"; };
 		32D3A88623CE1D8900D8492A /* Cafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D3A88923CE1D8900D8492A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D3A88E23CE1D8900D8492A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,6 +112,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		32599E9723E70BB50024AAE6 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				32D3A8BB23CF9A8600D8492A /* CafeTableViewController.swift */,
+				32D3A8BD23D0C62200D8492A /* CafeTableViewCell.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
 		32D3A87D23CE1D8900D8492A = {
 			isa = PBXGroup;
 			children = (
@@ -136,16 +147,16 @@
 			isa = PBXGroup;
 			children = (
 				32D3A88923CE1D8900D8492A /* AppDelegate.swift */,
-				32D3A8BB23CF9A8600D8492A /* CafeTableViewController.swift */,
-				32D3A8BD23D0C62200D8492A /* CafeTableViewCell.swift */,
+				32599E9723E70BB50024AAE6 /* MainScreen */,
 				3234CE7D23D7558C00C50996 /* Detail */,
-				3234CE7923D60E3F00C50996 /* Cafe.swift */,
 				3234CE7E23DF4A9400C50996 /* RateViewController.swift */,
-				32D3A88D23CE1D8900D8492A /* Main.storyboard */,
 				3207F6F823E2042A00F9BE76 /* NewCafeTableViewController.swift */,
+				32599E9223E70A140024AAE6 /* CoreDataStack.swift */,
 				3234CE8023E090BC00C50996 /* MapViewController.swift */,
+				32D3A88D23CE1D8900D8492A /* Main.storyboard */,
 				32D3A89223CE1D8B00D8492A /* LaunchScreen.storyboard */,
 				32D3A89023CE1D8B00D8492A /* Assets.xcassets */,
+				32599E9423E70B740024AAE6 /* Cafe.xcdatamodeld */,
 				32D3A89523CE1D8B00D8492A /* Info.plist */,
 			);
 			path = Cafe;
@@ -309,9 +320,10 @@
 				32D3A8BE23D0C62200D8492A /* CafeTableViewCell.swift in Sources */,
 				3234CE7C23D7556200C50996 /* CafeDetailTableViewCell.swift in Sources */,
 				32D3A8BC23CF9A8600D8492A /* CafeTableViewController.swift in Sources */,
+				32599E9623E70B740024AAE6 /* Cafe.xcdatamodeld in Sources */,
 				3234CE7823D5FEC500C50996 /* CafeDeteilViewController.swift in Sources */,
 				3207F6F923E2042A00F9BE76 /* NewCafeTableViewController.swift in Sources */,
-				3234CE7A23D60E3F00C50996 /* Cafe.swift in Sources */,
+				32599E9323E70A140024AAE6 /* CoreDataStack.swift in Sources */,
 				32D3A88A23CE1D8900D8492A /* AppDelegate.swift in Sources */,
 				3234CE7F23DF4A9400C50996 /* RateViewController.swift in Sources */,
 				3234CE8123E090BC00C50996 /* MapViewController.swift in Sources */,
@@ -637,6 +649,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		32599E9423E70B740024AAE6 /* Cafe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				32599E9523E70B740024AAE6 /* Cafe.xcdatamodel */,
+			);
+			currentVersion = 32599E9523E70B740024AAE6 /* Cafe.xcdatamodel */;
+			path = Cafe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 32D3A87E23CE1D8900D8492A /* Project object */;
 }

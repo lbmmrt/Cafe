@@ -251,6 +251,9 @@
                                                     <state key="normal" title="Да">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="toggleIsVisitedPressed:" destination="d5D-KM-9bW" eventType="touchUpInside" id="bq3-K9-DDS"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phm-SV-Kok">
                                                     <rect key="frame" x="308" y="30" width="60" height="30"/>
@@ -263,6 +266,9 @@
                                                     <state key="normal" title="Нет">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="toggleIsVisitedPressed:" destination="d5D-KM-9bW" eventType="touchUpInside" id="udF-0O-hVP"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -291,12 +297,22 @@
                     <navigationItem key="navigationItem" id="GOO-fh-xHr">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dZK-Q8-w2W">
                             <connections>
-                                <segue destination="ZwS-BZ-Z86" kind="unwind" unwindAction="closeWithSegue:" id="r0F-Vy-M3e"/>
+                                <segue destination="ZwS-BZ-Z86" kind="unwind" identifier="unwindSegueFromNewCafe" unwindAction="closeWithSegue:" id="r0F-Vy-M3e"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nNS-7D-Ydd">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="d5D-KM-9bW" id="WMa-3y-W7K"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="adressTextField" destination="aft-w1-niY" id="FMh-Os-DRo"/>
                         <outlet property="imageView" destination="kxt-bk-vhL" id="iPw-2p-BCb"/>
+                        <outlet property="nameTextField" destination="d7M-Vk-P3P" id="wCD-kO-FcD"/>
+                        <outlet property="noButton" destination="phm-SV-Kok" id="ZpT-cf-VLS"/>
+                        <outlet property="typeTextField" destination="D6U-HV-rq3" id="N2f-g6-V4d"/>
+                        <outlet property="yesButton" destination="CHM-Im-6yT" id="Dbq-Qg-Pkg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMX-yX-7F4" userLabel="First Responder" sceneMemberID="firstResponder"/>

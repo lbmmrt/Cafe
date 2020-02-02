@@ -10,11 +10,59 @@ import UIKit
 
 class NewCafeTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var adressTextField: UITextField!
+    @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
+    var isVisited = false
+    
+    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        if nameTextField.text == "" || adressTextField.text == "" || typeTextField.text == "" {
+            print("Не все поля заполнены")
+        } else {
+            
+            if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
+                let cafe = Cafe(context: context)
+                cafe.name = nameTextField.text
+                cafe.location = adressTextField.text
+                cafe.type = typeTextField.text
+                cafe.isVisited = isVisited
+                if let image = imageView.image {
+                    cafe.image = image.pngData()
+                }
+                
+                do {
+                    try context.save()
+                    print("Сохранено")
+                } catch let error as NSError {
+                    print("Не удвлось сохранить данные \(error), \(error.userInfo)")
+                }
+            }
+            performSegue(withIdentifier: "unwindSegueFromNewCafe", sender: self)
+        }
+    }
+    
+    @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var noButton: UIButton!
+    
+    @IBAction func toggleIsVisitedPressed(_ sender: UIButton) {
+        if sender == yesButton {
+            sender.backgroundColor = #colorLiteral(red: 0.473668126, green: 0.7349619495, blue: 0.1076456176, alpha: 1)
+            noButton.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+            isVisited = true
+        } else {
+            sender.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+            yesButton.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+            isVisited = false
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        yesButton.backgroundColor = #colorLiteral(red: 0.473668126, green: 0.7349619495, blue: 0.1076456176, alpha: 1)
+        noButton.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         
     }
     

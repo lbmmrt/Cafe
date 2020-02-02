@@ -10,23 +10,23 @@ import UIKit
 
 class CafeTableViewController: UITableViewController {
     
-    var cafe: [Cafe] = [
-        Cafe(name: "Ogonёk Grill&Bar", type: "ресторан-бар", location: "Москва, Комсомольская площаль 5", image: "ogonek.jpg", isVisited: false),
-        Cafe(name: "Елу", type: "ресторан", location: "Москва", image: "elu.jpg", isVisited: false),
-        Cafe(name: "Bonsai", type: "ресторан", location: "Уфа", image: "bonsai.jpg", isVisited: false),
-        Cafe(name: "Дастархан", type: "ресторан", location: "Уфа", image: "dastarhan.jpg", isVisited: false),
-        Cafe(name: "Индокитай", type: "ресторан", location: "Уфа", image: "indokitay.jpg", isVisited: false),
-        Cafe(name: "X.O", type: "ресторан-клуб", location: "Уфа", image: "x.o.jpg", isVisited: false),
-        Cafe(name: "Балкан Гриль", type: "ресторан", location: "Уфа", image: "balkan.jpg", isVisited: false),
-        Cafe(name: "Respublica", type: "ресторан", location: "Уфа", image: "respublika.jpg", isVisited: false),
-        Cafe(name: "Speak Easy", type: "ресторан-клуб", location: "Уфа", image: "speakeasy.jpg", isVisited: false),
-        Cafe(name: "Morris Pub", type: "ресторан", location: "Уфа", image: "morris.jpg", isVisited: false),
-        Cafe(name: "Вкусные истории", type: "ресторан", location: "Уфа", image: "istorii.jpg", isVisited: false),
-        Cafe(name: "Классик", type: "ресторан", location: "Уфа", image: "klassik.jpg", isVisited: false),
-        Cafe(name: "Love&Life", type: "ресторан", location: "Уфа", image: "love.jpg", isVisited: false),
-        Cafe(name: "Шок", type: "ресторан", location: "Уфа", image: "shok.jpg", isVisited: false),
-        Cafe(name: "Бочка", type: "ресторан", location:  "Уфа", image: "bochka.jpg", isVisited: false)]
-    
+    var cafe: [Cafe] = []
+//        Cafe(name: "Ogonёk Grill&Bar", type: "ресторан-бар", location: "Москва, Комсомольская площаль 5", image: "ogonek.jpg", isVisited: false),
+//        Cafe(name: "Елу", type: "ресторан", location: "Москва", image: "elu.jpg", isVisited: false),
+//        Cafe(name: "Bonsai", type: "ресторан", location: "Уфа", image: "bonsai.jpg", isVisited: false),
+//        Cafe(name: "Дастархан", type: "ресторан", location: "Уфа", image: "dastarhan.jpg", isVisited: false),
+//        Cafe(name: "Индокитай", type: "ресторан", location: "Уфа", image: "indokitay.jpg", isVisited: false),
+//        Cafe(name: "X.O", type: "ресторан-клуб", location: "Уфа", image: "x.o.jpg", isVisited: false),
+//        Cafe(name: "Балкан Гриль", type: "ресторан", location: "Уфа", image: "balkan.jpg", isVisited: false),
+//        Cafe(name: "Respublica", type: "ресторан", location: "Уфа", image: "respublika.jpg", isVisited: false),
+//        Cafe(name: "Speak Easy", type: "ресторан-клуб", location: "Уфа", image: "speakeasy.jpg", isVisited: false),
+//        Cafe(name: "Morris Pub", type: "ресторан", location: "Уфа", image: "morris.jpg", isVisited: false),
+//        Cafe(name: "Вкусные истории", type: "ресторан", location: "Уфа", image: "istorii.jpg", isVisited: false),
+//        Cafe(name: "Классик", type: "ресторан", location: "Уфа", image: "klassik.jpg", isVisited: false),
+//        Cafe(name: "Love&Life", type: "ресторан", location: "Уфа", image: "love.jpg", isVisited: false),
+//        Cafe(name: "Шок", type: "ресторан", location: "Уфа", image: "shok.jpg", isVisited: false),
+//        Cafe(name: "Бочка", type: "ресторан", location:  "Уфа", image: "bochka.jpg", isVisited: false)]
+
     @IBAction func close(segue: UIStoryboardSegue) {
         
     }
@@ -58,7 +58,7 @@ class CafeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CafeTableViewCell
         
-        cell.imageCafe.image = UIImage(named: cafe[indexPath.row].image)
+        cell.imageCafe.image = UIImage(data: cafe[indexPath.row].image! as Data)
         cell.imageCafe.layer.cornerRadius = 40
         cell.imageCafe.clipsToBounds = true
         cell.nameLebel.text = cafe[indexPath.row].name
@@ -124,8 +124,8 @@ class CafeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let share = UITableViewRowAction(style: .default, title: "Поделиться") { (action, indexPath) in
-            let defaultText = "Я сейчас в " + self.cafe[indexPath.row].name
-            if let image = UIImage(named: self.cafe[indexPath.row].image) {
+            let defaultText = "Я сейчас в " + self.cafe[indexPath.row].name! 
+            if let image = UIImage(data: self.cafe[indexPath.row].image! as Data) {
                 let activityController = UIActivityViewController(activityItems: [defaultText, image], applicationActivities: nil)
                 self.present(activityController, animated: true, completion: nil)
             }
