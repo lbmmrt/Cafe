@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
-class CafeTableViewController: UITableViewController {
+class CafeTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+    
+    var fetchResultsController: NSFetchedResultsController<Cafe>!
     
     var cafe: [Cafe] = []
 //        Cafe(name: "Ogonёk Grill&Bar", type: "ресторан-бар", location: "Москва, Комсомольская площаль 5", image: "ogonek.jpg", isVisited: false),
@@ -41,8 +44,51 @@ class CafeTableViewController: UITableViewController {
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
+        let fetchRequest: NSFetchRequest<Cafe> = Cafe.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
+            
+            fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            
+            fetchResultsController.delegate = self
+            
+            do {
+                try fetchResultsController.performFetch()
+                cafe = fetchResultsController.fetchedObjects!
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
     }
     
+    // MARK: - Fetch results controller delegate
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert: guard let indexPath = newIndexPath else { break }
+        tableView.insertRows(at: [indexPath], with: .fade)
+        case .delete: guard let indexPath = indexPath else { break }
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        case .update: guard let indexPath = indexPath else { break }
+        tableView.reloadRows(at: [indexPath], with: .fade)
+        default:
+            tableView.reloadData()
+        }
+        
+        cafe = controller.fetchedObjects as! [Cafe]
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
