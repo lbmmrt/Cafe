@@ -251,13 +251,13 @@ extension CafeTableViewController: UISearchResultsUpdating {
 }
 
 extension CafeTableViewController: UISearchBarDelegate {
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
        if searchBar.text == "" {
             navigationController?.hidesBarsOnSwipe = false
        }
     }
     
-    func searchBarShouldEndEditing(_ searchBar: UISearchBar) {
+    private func searchBarShouldEndEditing(_ searchBar: UISearchBar) {
         navigationController?.hidesBarsOnSwipe = true
     }
 }
