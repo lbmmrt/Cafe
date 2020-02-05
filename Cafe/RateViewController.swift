@@ -27,7 +27,9 @@ class RateViewController: UIViewController {
         
         performSegue(withIdentifier: "unwindSegueToDVC", sender: sender)
         
-    }
+        }
+        
+    
     
     override func viewDidAppear(_ animated: Bool) {
 //        UIView.animate(withDuration: 0.4) {

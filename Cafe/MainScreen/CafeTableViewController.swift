@@ -12,8 +12,10 @@ import CoreData
 class CafeTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var fetchResultsController: NSFetchedResultsController<Cafe>!
-    
+    var searchController = UISearchController()
+    var filteredResultArray: [Cafe] = []
     var cafe: [Cafe] = []
+    
 //        Cafe(name: "Ogonёk Grill&Bar", type: "ресторан-бар", location: "Москва, Комсомольская площаль 5", image: "ogonek.jpg", isVisited: false),
 //        Cafe(name: "Елу", type: "ресторан", location: "Москва", image: "elu.jpg", isVisited: false),
 //        Cafe(name: "Bonsai", type: "ресторан", location: "Уфа", image: "bonsai.jpg", isVisited: false),
@@ -36,11 +38,27 @@ class CafeTableViewController: UITableViewController, NSFetchedResultsController
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.hidesBarsOnSwipe = true
-     
     }
+    
+    func filterContentFor(searchText text: String) {
+        filteredResultArray = cafe.filter{ (cafe) -> Bool in
+            return(cafe.name?.lowercased().contains(text.lowercased()))!
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+        searchController.searchBar.barTintColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+        searchController.searchBar.tintColor = .white
+        tableView.tableHeaderView = searchController.searchBar
+    
+        definesPresentationContext = true
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
@@ -97,21 +115,37 @@ class CafeTableViewController: UITableViewController, NSFetchedResultsController
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return cafe.count
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredResultArray.count
+        } else {
+            return cafe.count
+        }
     }
     
+    func cafeToDisplayAt(indexPath: IndexPath) -> Cafe {
+        let cafe1: Cafe
+        if searchController.isActive && searchController.searchBar.text != "" {
+        cafe1 = filteredResultArray[indexPath.row]
+        } else {
+        cafe1 = cafe[indexPath.row]
+
+        }
+        return cafe1
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CafeTableViewCell
         
-        cell.imageCafe.image = UIImage(data: cafe[indexPath.row].image! as Data)
+        let cafe = cafeToDisplayAt(indexPath: indexPath)
+        
+        cell.imageCafe.image = UIImage(data: cafe.image! as Data)
         cell.imageCafe.layer.cornerRadius = 40
         cell.imageCafe.clipsToBounds = true
-        cell.nameLebel.text = cafe[indexPath.row].name
-        cell.locationLabel.text = cafe[indexPath.row].location
-        cell.typeLabel.text = cafe[indexPath.row].type
+        cell.nameLebel.text = cafe.name
+        cell.locationLabel.text = cafe.location
+        cell.typeLabel.text = cafe.type
         
-        if self.cafe[indexPath.row].isVisited {
+        if cafe.isVisited {
             cell.accessoryType = .checkmark
         } else {
             cell.accessoryType = .none
@@ -179,7 +213,17 @@ class CafeTableViewController: UITableViewController, NSFetchedResultsController
         
         let delete = UITableViewRowAction(style: .default, title: "Удалить") { (action, indexPath) in
             self.cafe.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
+                
+                let objectToDelete = self.fetchResultsController.object(at: indexPath)
+                context.delete(objectToDelete)
+                
+                do {
+                    try context.save()
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
         }
         
         
@@ -191,10 +235,29 @@ class CafeTableViewController: UITableViewController, NSFetchedResultsController
         if segue.identifier == "detaliSegue" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let dvc = segue.destination as! CafeDeteilViewController
-                dvc.cafe = self.cafe[indexPath.row]
+                dvc.cafe = cafeToDisplayAt(indexPath: indexPath)
                 
             }
         }
         
+    }
+}
+
+extension CafeTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentFor(searchText: searchController.searchBar.text!)
+        tableView.reloadData()
+    }
+}
+
+extension CafeTableViewController: UISearchBarDelegate {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+       if searchBar.text == "" {
+            navigationController?.hidesBarsOnSwipe = false
+       }
+    }
+    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) {
+        navigationController?.hidesBarsOnSwipe = true
     }
 }
