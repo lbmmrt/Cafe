@@ -84,6 +84,11 @@ class CafeTableViewController: UITableViewController, NSFetchedResultsController
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        let userDefaults = UserDefaults.standard
+        let wasIntroWatched = userDefaults.bool(forKey: "wasIntroWatched")
+        
+        guard !wasIntroWatched else { return }
+        
         if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "pageViewController") as? PageViewController  {
             present(pageViewController, animated: true, completion: nil)
         }
@@ -148,6 +153,7 @@ class CafeTableViewController: UITableViewController, NSFetchedResultsController
         
         cell.imageCafe.image = UIImage(data: cafe.image! as Data)
         cell.imageCafe.layer.cornerRadius = 40
+        //cell.imageCafe.layoutSubviews()
         cell.imageCafe.clipsToBounds = true
         cell.nameLebel.text = cafe.name
         cell.locationLabel.text = cafe.location

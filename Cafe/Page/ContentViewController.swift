@@ -26,7 +26,11 @@ class ContentViewController: UIViewController {
         switch index {
         case 0: let pageVc = parent as! PageViewController
                     pageVc.nextVC(atIndex: index)
-        case 1: dismiss(animated: true, completion: nil)
+        case 1: let userDefaults = UserDefaults.standard
+                    userDefaults.set(true, forKey: "wasIntroWatched")
+                    userDefaults.synchronize()
+        
+                    dismiss(animated: true, completion: nil)
         default:
             break
         }
