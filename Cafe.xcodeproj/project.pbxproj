@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3207F6F923E2042A00F9BE76 /* NewCafeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3207F6F823E2042A00F9BE76 /* NewCafeTableViewController.swift */; };
+		3224B07723F1BB7F0083B72A /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3224B07623F1BB7F0083B72A /* AboutTableViewController.swift */; };
 		3234CE7823D5FEC500C50996 /* CafeDeteilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7723D5FEC500C50996 /* CafeDeteilViewController.swift */; };
 		3234CE7C23D7556200C50996 /* CafeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7B23D7556200C50996 /* CafeDetailTableViewCell.swift */; };
 		3234CE7F23DF4A9400C50996 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3234CE7E23DF4A9400C50996 /* RateViewController.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		3207F6F823E2042A00F9BE76 /* NewCafeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCafeTableViewController.swift; sourceTree = "<group>"; };
+		3224B07623F1BB7F0083B72A /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		3234CE7723D5FEC500C50996 /* CafeDeteilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDeteilViewController.swift; sourceTree = "<group>"; };
 		3234CE7B23D7556200C50996 /* CafeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3234CE7E23DF4A9400C50996 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				32599E9223E70A140024AAE6 /* CoreDataStack.swift */,
 				3234CE8023E090BC00C50996 /* MapViewController.swift */,
 				32D3A88D23CE1D8900D8492A /* Main.storyboard */,
+				3224B07623F1BB7F0083B72A /* AboutTableViewController.swift */,
 				32599E9723E70BB50024AAE6 /* MainScreen */,
 				3234CE7D23D7558C00C50996 /* Detail */,
 				32599E9C23EC600C0024AAE6 /* Page */,
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D3A8BE23D0C62200D8492A /* CafeTableViewCell.swift in Sources */,
+				3224B07723F1BB7F0083B72A /* AboutTableViewController.swift in Sources */,
 				3234CE7C23D7556200C50996 /* CafeDetailTableViewCell.swift in Sources */,
 				32D3A8BC23CF9A8600D8492A /* CafeTableViewController.swift in Sources */,
 				32599E9B23EC5FD00024AAE6 /* PageViewController.swift in Sources */,
