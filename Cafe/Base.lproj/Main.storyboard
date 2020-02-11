@@ -582,7 +582,7 @@
             </objects>
             <point key="canvasLocation" x="1089.8550724637682" y="98.4375"/>
         </scene>
-        <!--Root View Controller-->
+        <!--О нас-->
         <scene sceneID="DLm-wl-Tod">
             <objects>
                 <tableViewController id="U9U-Py-Xop" customClass="AboutTableViewController" customModule="Cafe" customModuleProvider="target" sceneMemberID="viewController">
@@ -618,11 +618,29 @@
                             <outlet property="delegate" destination="U9U-Py-Xop" id="Dc5-XE-6lX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="h7j-Ak-Olk"/>
+                    <navigationItem key="navigationItem" title="О нас" id="h7j-Ak-Olk"/>
+                    <connections>
+                        <segue destination="ZaV-Hp-Wfn" kind="show" identifier="showWebPageSegue" id="L51-DR-rMF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBP-jg-Sou" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1125" y="816"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="PUv-h7-6yD">
+            <objects>
+                <viewController id="ZaV-Hp-Wfn" customClass="WebViewController" customModule="Cafe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TV1-jH-Qrd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Son-xh-Arb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4xu-gv-pXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1985" y="813"/>
         </scene>
         <!--О нас-->
         <scene sceneID="VvG-qY-0E6">
